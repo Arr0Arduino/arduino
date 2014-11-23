@@ -256,14 +256,12 @@ void loop()
     return ballDown;
   }
 
-  //MODIFIES:paused
-  //EFFETCS: sets paused to true
+
   void Board::setPause() {
     paused = true;
   }
 
-  //MODIFIES: nothing
-  //EFFETCS: returns paused
+
   boolean Board::getPaused() {
     return paused;
   }
