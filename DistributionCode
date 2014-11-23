@@ -38,24 +38,34 @@ public:
 
   //MODIFIES: level
   //EFFECTS: sets the level to input
-  void setLevel(int input);
+  void setLevel(int input){
+  level = input;
+  }
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballRow
-  int getBallRow();
+  int getBallRow(){
+  return ballRow;
+  }
 
   //MODIFIES: ballRow
   //EFFECTS: sets the row of the ball to input
-  void setBallRow(int input);
+  void setBallRow(int input){
+  ballRow = input;
+}
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballCol
-  int getBallCol();
+  int getBallCol(){
+  return ballCol;
+  }
   
 
   //MODIFIES: ballCol 
   //EFFECTS: sets the column of the ball to input
-  void setBallCol(int input);
+  void setBallCol(int input){
+  ballCol = input;
+  }
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballLeft
@@ -91,11 +101,15 @@ public:
 
   //MODIFIES:paused
   //EFFETCS: sets paused to true
-  void setPause();
+  void setPause(){
+  pause = true;
+  }
 
   //MODIFIES: nothing
   //EFFETCS: returns paused
-  boolean getPaused();
+  boolean getPaused(){
+  return pause;
+  }
 
   //MODIFIES: strength array, ballRow, ballCol, BallRight, ballDown
   //EFFECTS: first sets up the ball so that it is on top of the paddle
@@ -222,29 +236,8 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
- void Board::setLevel(int input){
-  level = input;
-  }
-
-
-  int Board::getBallRow(){
-  return ballRow;
-  }
-
-
-  void Board::setBallRow(int input){
-  ballRow = input;
-}
-
-
-  int Board::getBallCol(){
-  return ballCol;
-  }
-  
-
-
-  void Board::setBallCol(int input){
-  ballCol = input;
+  int Board::getLevel() {
+    return level;
   }
 
   boolean Board::getBallLeft() {
@@ -269,12 +262,4 @@ void loop()
 
 
 
-  void Board::setPause(){
-  pause = true;
-  }
-
-
-  boolean Board::getPaused(){
-  return pause;
-  }
 
