@@ -238,7 +238,25 @@ void loop()
 
 
 
+  boolean Board::getBallLeft() {
+    return ballLeft;
+  }
+  
+  void Board::setBallLeft(boolean input) {
+    ballLeft = input;
+  }
 
+  boolean getBallRight() {
+    return ballRight;
+  }
+
+  void setBallRight(boolean input) {
+    ballRight = input;
+  }
+
+  boolean getBallDown() {
+    return ballDown;
+  }
 
 
 
