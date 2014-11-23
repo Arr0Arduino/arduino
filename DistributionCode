@@ -101,11 +101,15 @@ public:
 
   //MODIFIES:paused
   //EFFETCS: sets paused to true
-  void setPause();
+  void setPause(){
+  pause = true;
+  }
 
   //MODIFIES: nothing
   //EFFETCS: returns paused
-  boolean getPaused();
+  boolean getPaused(){
+  return pause;
+  }
 
   //MODIFIES: strength array, ballRow, ballCol, BallRight, ballDown
   //EFFECTS: first sets up the ball so that it is on top of the paddle
@@ -232,38 +236,53 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
-  int Board::getLevel() {
-    return level;
-  }
-
-  boolean Board::getBallLeft() {
-    return ballLeft;
-  }
-  
-  void Board::setBallLeft(boolean input) {
-    ballLeft = input;
-  }
-
-  boolean Board::getBallRight() {
-    return ballRight;
-  }
-
-  void Board::setBallRight(boolean input) {
-    ballRight = input;
-  }
-
-  boolean Board::getBallDown() {
-    return ballDown;
-  }
-
-
-  void Board::setPause() {
+Board::Board () {
+    paddlePos = 0;
+    level = 0;
+    lives = 3
+    paddleHeight = 7;
     paused = true;
-  }
+    ballLeft = true;
+}
+
+int Board::getPaddlePos() {
+    return paddlePos;
+}
+
+void Board::setPaddlePos(int input) {
+    paddlePos = input;
+}
+
+int Board::getLives() {
+    return lives;
+}
+
+void Board::setLives(int input) {
+    lives = input;
+}
 
 
-  boolean Board::getPaused() {
-    return paused;
-  }
+
+boolean Board::getBallLeft() {
+    return ballLeft;
+}
+  
+void Board::setBallLeft(boolean input) {
+    ballLeft = input;
+}
+
+boolean getBallRight() {
+    return ballRight;
+}
+
+void setBallRight(boolean input) {
+    ballRight = input;
+}
+
+boolean getBallDown() {
+    return ballDown;
+}
+
+
 
 
