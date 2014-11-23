@@ -236,46 +236,6 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
-  }
-=======
-
-  //MODIFIES: the private member variables of Board
-  //EFFECTS: initializes paddlePos and level to 0, initializes lives to 3, paddleHeight to 7, paused and ballLeft to true
-  Board::Board () {
-      paddlePos = 0;
-      level = 0;
-      lives = 3;
-      paddleHeight = 7;
-      paused = true;
-      ballLeft = true;
-}
-
-  //MODIFIES: nothing 
-  //EFFECTS: returns paddlePos
-  int getPaddlePos() {
-      return paddlePos;
-}
-
-  //MODIFIES: paddlePos 
-  //EFFECTS: sets the paddle position to input
-  void setPaddlePos(int input) {
-      paddlePos = input;
-}
-
-  //MODIFIES: nothing 
-  //EFFECTS: returns lives
-  int getLives() {
-      return lives;
-}
-
-  //MODIFIES: lives 
-  //EFFECTS: sets the lives to input
-  void setLives(int input) {
-      lives = input;
-}
-
-
->>>>>>> Stashed changes
 Board::Board () {
     paddlePos = 0;
     level = 0;
@@ -311,18 +271,18 @@ void Board::setBallLeft(boolean input) {
     ballLeft = input;
 }
 
-boolean getBallRight() {
+boolean Board::getBallRight() {
     return ballRight;
 }
 
-void setBallRight(boolean input) {
+void Board::setBallRight(boolean input) {
     ballRight = input;
 }
 
-boolean getBallDown() {
+boolean Board::getBallDown() {
     return ballDown;
 }
 
-
+hey
 
 
