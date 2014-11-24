@@ -414,5 +414,4 @@ void gameOver(){
   resetFunc();
 }
 
-//DO NOT MODIFY ANY CODE ABOVE THIS LINE. 
-*/
+*******************************************************/
