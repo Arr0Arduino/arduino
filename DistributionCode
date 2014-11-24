@@ -91,15 +91,11 @@ public:
 
   //MODIFIES:paused
   //EFFETCS: sets paused to true
-  void setPause(){
-  pause = true;
-  }
+  void setPause();
 
   //MODIFIES: nothing
   //EFFETCS: returns paused
-  boolean getPaused(){
-  return pause;
-  }
+  boolean getPaused();
 
   //MODIFIES: strength array, ballRow, ballCol, BallRight, ballDown
   //EFFECTS: first sets up the ball so that it is on top of the paddle
@@ -226,40 +222,7 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
-<<<<<<< HEAD
-=======
-  }
-=======
-
-  Board::Board () {
-      paddlePos = 0;
-      level = 0;
-      lives = 3;
-      paddleHeight = 7;
-      paused = true;
-      ballLeft = true;
-}
-
-  int getPaddlePos() {
-      return paddlePos;
-}
-
-  void setPaddlePos(int input) {
-      paddlePos = input;
-}
-
-  int getLives() {
-      return lives;
-}
-
-  void setLives(int input) {
-      lives = input;
-}
-
-
->>>>>>> Stashed changes
->>>>>>> FETCH_HEAD
-Board::Board () {
+Board::Board() {
     paddlePos = 0;
     level = 0;
     lives = 3
@@ -284,7 +247,29 @@ void Board::setLives(int input) {
     lives = input;
 }
 
+int Board::getLevel() {
+  return level;
+}
 
+void setLevel(int input){
+   level = input;
+}
+
+int getBallRow(){
+  return ballRow;
+}
+
+void setBallRow(int input){
+  ballRow = input;
+}
+
+int getBallCol(){
+  return ballCol;
+}
+  
+void setBallCol(int input){
+ ballCol = input;
+}
 
 boolean Board::getBallLeft() {
     return ballLeft;
@@ -306,29 +291,128 @@ boolean Board::getBallDown() {
     return ballDown;
 }
 
-<<<<<<< HEAD
-hey
-=======
-  void setLevel(int input){
-    level = input;
-  }
+void Board::setBallDown(boolean input) {
+  ballDown = input;
+}
 
-  int getBallRow(){
-    return ballRow;
-  }
+int Board::getPaddleHeight() {
+  return paddleHeight;
+}
 
-  void setBallRow(int input){
-    ballRow = input;
-  }
+void Board::resetPause() {
+  paused = false;
+}
 
+void Board::setPause() {
+  paused = true;
+}
 
-  int getBallCol(){
-   return ballCol;
-  }
+boolean getPaused() {
+  return paused
+}
   
-  void setBallCol(int input){
-   ballCol = input;
-  }
->>>>>>> FETCH_HEAD
+  
+/***************************************
+FUNCTIONS THAT STILL NEED TO BE IMPLEMENTED!!!!!
+  //MODIFIES: strength array, ballRow, ballCol, BallRight, ballDown
+  //EFFECTS: first sets up the ball so that it is on top of the paddle
+  // on the left pixel with initial direction to the left and up. Next 
+  //sets up the board according to which level the game is on.
+  void initBoard();
+
+  //EFFECTS:Displays the pixels with strength>0 on the board
+  void displayBlocks();
+
+  //MODIFIES: ballRow and ballCol
+  //EFFECTS: updates the balls position based on what direction the ball 
+  //is traveling. Be careful to not let the ball go off the board!
+  void updateBall();
+
+  //MODIFIES: nothing
+  //EFFECTS: returns true if the ball goes off the board when the player 
+  //fails to hit it with the paddle
+  boolean lostBall();
+
+  //MODIFIES:ballDown, ballRight, ballLeft
+  //EFFECTS: changes the ball's direction if the ball hits the top or sides of the board
+  void hitWall();
+
+  //MODIFIES:ballDown, ballRight, ballLeft
+  //EFFECTS:changes the direction of the ball depending on which direction the ball was traveling 
+  //when it hits the paddle
+  void hitPaddle( );
+
+  //MODIFIES:ballDown, ballRight, ballLeft, strength array
+  //EFFECTS:changes the direction of the ball depending on which direction the ball was traveling 
+  //when it hits a block. Decrements the strength of the block.
+  void hitBlock();
+
+  //MODIFIES: nothing
+  //EFFECTS: returns true if all blocks are destroyed, false otherwise 
+  boolean levelComplete();
+
+  //MODIFIES:strength array
+  //EFFECTS: sets all strengths to 0
+  void initStrength();
 
 
+private:
+
+  int strength[8][16];          //The strengths of blocks on the board
+  int paddlePos;		//Leftmost position of the paddle
+  int paddleHeight;	        // height of the upper paddle
+  int lives;			//Number of lives left
+  int level;			//Current level
+  int ballRow;			//Row of the ball
+  int ballCol;			//Column of the ball
+  boolean ballLeft;		//If ballleft == TRUE, ball is moving left
+  boolean ballRight;		//If ballRight == TRUE, ball is moving right.  
+  boolean ballDown;		//If ballDown == TRUE, ball is moving down.  Otherwise, ball is moving up
+  boolean paused;		// Pause after ball loss
+
+};
+
+//sets up the LED board with the correct parameters
+Adafruit_8x16matrix matrix = Adafruit_8x16matrix();
+
+//EFFECTS:turns off all the pixels on the board
+void clearBoard();
+
+//REQUIRES:  val is the value of the potentiometer
+//MODIFIES: nothing
+//EFFECTS: returns the column position of the left pixel of the paddle
+int calculatePaddlePosition(int val);
+
+
+//EFFECTS:displays the number of lives remaining/level number on the board. If it doesn't all fit 
+//on the board at once, the text scrolls.
+//use text size 1 and delay of 50
+void printMessage(int number);
+
+//EFFECTS:displays string text needed(suchs as "LIVES" or "LEVEL") on the board. If it
+//doesn't all fit on the board at once, the text scrolls.
+//use text size 1 and delay of 50
+void printMessage(String message);
+
+//contains data about pin assignments and values
+struct Pins
+{
+  int potPin; 	        //input pin potentiometer
+  int val;		//value of the potentiometer
+  int button;		//input pin for the button
+  int buttonState;      // current state of the button
+
+};
+
+void(* resetFunc) (void) = 0; //declare reset function @ address 0
+
+//EFFECTS:displays "GameOver" on the board and resets the game. This function
+//is implemented for you.
+void gameOver(){
+  printMessage("GameOver");
+  delay(3000);
+  resetFunc();
+}
+
+//DO NOT MODIFY ANY CODE ABOVE THIS LINE. 
+*/
