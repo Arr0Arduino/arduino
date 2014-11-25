@@ -38,24 +38,34 @@ public:
 
   //MODIFIES: level
   //EFFECTS: sets the level to input
-  void setLevel(int input);
+  void setLevel(int input){
+  level = input;
+  }
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballRow
-  int getBallRow();
+  int getBallRow(){
+  return ballRow;
+  }
 
   //MODIFIES: ballRow
   //EFFECTS: sets the row of the ball to input
-  void setBallRow(int input);
+  void setBallRow(int input){
+  ballRow = input;
+}
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballCol
-  int getBallCol();
+  int getBallCol(){
+  return ballCol;
+  }
   
 
   //MODIFIES: ballCol 
   //EFFECTS: sets the column of the ball to input
-  void setBallCol(int input);
+  void setBallCol(int input){
+  ballCol = input;
+  }
 
   //MODIFIES: nothing 
   //EFFECTS: returns ballLeft
@@ -222,7 +232,11 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
+<<<<<<< Updated upstream
 Board::Board() {
+=======
+Board::Board () {
+>>>>>>> Stashed changes
     paddlePos = 0;
     level = 0;
     lives = 3
@@ -259,15 +273,15 @@ int getBallRow(){
   return ballRow;
 }
 
-void setBallRow(int input){
+void Board::setBallRow(int input){
   ballRow = input;
 }
 
-int getBallCol(){
+int Board::getBallCol(){
   return ballCol;
 }
   
-void setBallCol(int input){
+void Board::setBallCol(int input){
  ballCol = input;
 }
 
@@ -291,6 +305,7 @@ boolean Board::getBallDown() {
     return ballDown;
 }
 
+<<<<<<< Updated upstream
 void Board::setBallDown(boolean input) {
   ballDown = input;
 }
@@ -302,12 +317,15 @@ int Board::getPaddleHeight() {
 void Board::resetPause() {
   paused = false;
 }
+=======
+>>>>>>> Stashed changes
 
 void Board::setPause() {
   paused = true;
 }
 
-boolean getPaused() {
+<<<<<<< Updated upstream
+boolean Board::getPaused() {
   return paused
 }
   
@@ -413,5 +431,7 @@ void gameOver(){
   delay(3000);
   resetFunc();
 }
+=======
+>>>>>>> Stashed changes
 
 *******************************************************/
