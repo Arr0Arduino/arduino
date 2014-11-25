@@ -232,6 +232,7 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
+<<<<<<< Updated upstream
 Board::Board() {
 =======
 Board::Board () {
@@ -264,11 +265,11 @@ int Board::getLevel() {
   return level;
 }
 
-void Board::setLevel(int input){
+void setLevel(int input){
    level = input;
 }
 
-int Board::getBallRow(){
+int getBallRow(){
   return ballRow;
 }
 
@@ -304,6 +305,7 @@ boolean Board::getBallDown() {
     return ballDown;
 }
 
+<<<<<<< Updated upstream
 void Board::setBallDown(boolean input) {
   ballDown = input;
 }
@@ -315,11 +317,14 @@ int Board::getPaddleHeight() {
 void Board::resetPause() {
   paused = false;
 }
+=======
+>>>>>>> Stashed changes
 
 void Board::setPause() {
   paused = true;
 }
 
+<<<<<<< Updated upstream
 boolean Board::getPaused() {
   return paused
 }
@@ -395,6 +400,27 @@ void initBoard() {
       for (int i = 5; i < 7; i++) {
         for (int j = 0; j < 8; j++) {
           strength[j][i] = 1;
+        }
+      }
+    else {
+      for (int i = 15; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = rand() % 4 + 1;
+        }
+      }
+      for (int i = 14; i < 15; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = rand() % 4 + 1;
+        }
+      }
+      for (int i = 13; i < 14; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = rand() % 4 + 1;
+        }
+      }
+      for (int i = 5; i < 7; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] rand() % 3 + 1;
         }
       }
 }
