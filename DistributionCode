@@ -327,11 +327,77 @@ boolean Board::getPaused() {
   
 /***************************************
 FUNCTIONS THAT STILL NEED TO BE IMPLEMENTED!!!!!
-  //MODIFIES: strength array, ballRow, ballCol, BallRight, ballDown
-  //EFFECTS: first sets up the ball so that it is on top of the paddle
-  // on the left pixel with initial direction to the left and up. Next 
-  //sets up the board according to which level the game is on.
-  void initBoard();
+void initBoard() {
+    ballCol = getPaddlePos();
+    ballRow = 9;
+    BallRight = false;
+    BallDown = false;
+    level = getLevel();
+    if (level == 1) {
+      for (int i = 15; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 1;
+        }
+      }
+    }
+    if (level == 2) {
+      for (int i = 14; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 1;
+        }
+      }
+    }
+    if (level == 3) {
+      for (int i = 15; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 2;
+        }
+      }
+      for (int k = 14; k < 15; k++) {
+        for (int l = 0; l < 8; l++) {
+          strength[l][k] = 1;
+        }
+      }
+    }
+    if (level == 4) {
+      for (int i = 15; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 3;
+        }
+      }
+      for (int k = 14; k < 15; k++) {
+        for (int l = 0; l < 9; l++) {
+          strength[l][k] = 2;
+        }
+      }
+      for (int m = 13; m < 14; m++) {
+        for (int n = 0; n < 8; n++) {
+          strength[n][m] = 1;
+        }
+      }
+    }
+   if (level == 5) {
+      for (int i = 15; i < 16; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 3;
+        }
+      }
+      for (int i = 14; i < 15; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 0;
+        }
+      }
+      for (int i = 13; i < 14; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 2;
+        }
+      }
+      for (int i = 5; i < 7; i++) {
+        for (int j = 0; j < 8; j++) {
+          strength[j][i] = 1;
+        }
+      }
+}
 
   //EFFECTS:Displays the pixels with strength>0 on the board
   void displayBlocks();
