@@ -232,7 +232,6 @@ void loop()
 
 //WRITE YOUR FUNCTION IMPLEMENTATIONS BELOW 
 
-<<<<<<< Updated upstream
 Board::Board() {
 =======
 Board::Board () {
@@ -265,11 +264,11 @@ int Board::getLevel() {
   return level;
 }
 
-void setLevel(int input){
+void Board::setLevel(int input){
    level = input;
 }
 
-int getBallRow(){
+int Board::getBallRow(){
   return ballRow;
 }
 
@@ -305,7 +304,6 @@ boolean Board::getBallDown() {
     return ballDown;
 }
 
-<<<<<<< Updated upstream
 void Board::setBallDown(boolean input) {
   ballDown = input;
 }
@@ -317,14 +315,11 @@ int Board::getPaddleHeight() {
 void Board::resetPause() {
   paused = false;
 }
-=======
->>>>>>> Stashed changes
 
 void Board::setPause() {
   paused = true;
 }
 
-<<<<<<< Updated upstream
 boolean Board::getPaused() {
   return paused
 }
